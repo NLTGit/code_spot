@@ -68,7 +68,7 @@ def getNDVIImage(workingdir,geojsonfilename,year):
         image_out = ndvi_image.multiply(512).uint8() # Convert to 8-bit Image
         
         
-        task = ee.batch.Export.image.toDrive(image_out, folder="GEOG656_GEE", description='NDVIImage', dimensions = 720, region=area)
+        task = ee.batch.Export.image.toDrive(image_out, folder="Google Drive Folder Name Goes Here", description='NDVIImage', dimensions = 720, region=area)
         task.start() # Sends the process to the GEE cloud
         #print('RGB Image Task Status:',task.status()['state'])
     
