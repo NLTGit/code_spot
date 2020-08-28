@@ -95,7 +95,7 @@ def getNDVIImage(workingdir,geojsonfilename,year):
 
 print("Generate an NDVI image")
 #Part V - Creating Time Series getVideo()
-work = r"G:\My Drive\Geog656\lab9"
+work = r"yourfilederand"
 jsonfile = "EIT.json"
 year = 2019
 getNDVIImage(work,jsonfile,year)
