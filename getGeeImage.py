@@ -7,7 +7,6 @@ import ee # Import the Google Earth Engine module
 #ee.Initialize() # Initialize the Earth Engine module/this code runs inside functions now and only needed if code is run in the body of this script
 #print(ee.Image('USGS/SRTMGL1_003').getInfo()) # Print metadata
 
-
 def getImage(workingdir,geojsonfilename,year): 
     #function to generate an image given a working dir, geojson file, and a year, exports an RGB image to google drive and prints details
     class existsError(Exception):
