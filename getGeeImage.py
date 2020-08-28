@@ -60,7 +60,7 @@ def getImage(workingdir,geojsonfilename,year):
         image_rgb = least_cloudy.select(['B4', 'B3', 'B2']) # Select RGB Bands
         image_out = image_rgb.multiply(512).uint8() # Convert to 8-bit Image
         
-        task = ee.batch.Export.image.toDrive(image_out, folder="GEOG656_GEE", description='EIT_Feb82019_L8_RGB720', dimensions = 720, region=area)
+        task = ee.batch.Export.image.toDrive(image_out, folder="Google Drive Folder Name Goes Here", description='EIT_Feb82019_L8_RGB720', dimensions = 720, region=area)
         task.start() # Sends the process to the GEE cloud
         #print('RGB Image Task Status:',task.status()['state'])
     
