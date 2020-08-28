@@ -1,4 +1,4 @@
-#get NDVI Image for a given year given an AOI
+#get GEE NDVI Image for a given year given an AOI
 import os #import os process controls
 import geopandas #modele for handling json file handling support
 import json #json functions
@@ -96,6 +96,6 @@ def getNDVIImage(workingdir,geojsonfilename,year):
 print("Generate an NDVI image")
 #Part V - Creating Time Series getVideo()
 work = r"yourfilederand"
-jsonfile = "EIT.json"
+jsonfile = "YourJSONFile.json"
 year = 2019
 getNDVIImage(work,jsonfile,year)
