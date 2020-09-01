@@ -18,13 +18,6 @@ utm_epsg = {
   "UTM19N": 26919,
 }
 
-def averageTwoInPython3(): #function to run print an average of two input numbers
-    x = float(input("What is the first number?: "))
-    y = float(input("What is the second number?: "))
-    average = (x+y)/2
-    print_this = f"The average of {x} and {y} is {average}"
-    print (print_this)
-
 def createGradebook(studentnameslist,quiznameslist):
     #DataFrame gradebook for a varaible number of students and a variable number of quizzes
     #with randomly assign grades between 0 and 5; returns a dataframe
