@@ -1,4 +1,6 @@
-#regression analysis code including pi estimation, 
+#regression analysis functions (RMSE,R2,RasterRegression,Plotting)
+#author: Ghermay Araya
+#all code is in python 2.7 to accomodate esri arcpy calls
 import random #import random number generator module
 import numpy #to handle numpy calls in test_input.py
 import numpy as np #importing numpy module with alias np
@@ -6,7 +8,6 @@ import matplotlib.pyplot as plt #importing the plotting functionality of matplot
 import time #importing time function to test time efficiency of code
 import traceback #error tracking
 import arcpy #esri geoprocessing module
-#all code is in python 2.7
 
 class Error_EmptyArray(Exception):
     pass #handle empty array error
@@ -19,9 +20,9 @@ def rmse (observed,predicted):
     if predicted.size != observed.size:
       raise Error_ArraySizeDifferent
     error = predicted - observed
-    #2.Calculate Squared Error (SE) = (Error)2
+    #Calculate Squared Error (SE) = (Error)2
     se = error**2
-    #3.Calculate Mean Squared Error (MSE) = Average(SE)
+    #Calculate Mean Squared Error (MSE) = Average(SE)
     mse = np.average(se)
     remse = np.sqrt(mse)
     return remse
@@ -136,12 +137,13 @@ try:
     print "RMSE:",model_rmse
     model_r_2 = r_squared(y_predicted,y_observed)
     print "R^2:",model_r_2
+    #the nexst 4 lines test exception errors
     #y_empty = numpy.array([])
     #y_error = numpy.array([42])
     #model_rmse = rmse(y_predicted,y_empty)
     #model_r_2 = r_squared(y_error,y_observed)
     print "***Part III***"
-    workspace = r"C:\Users\gherm\Desktop\geog656\lab7\biomass_lidar.gdb"
+    workspace = r"gdb path that contains the biomas raster and the two lidar reading datasets below"
     biomassRaster = "biomass_mgha"
     lidarRaster1 = "lidar_med_z"
     lidarRaster2 = "lidar_max_z"
